@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+	<div id = "blog_header" class="ui center aligned raised very padded text container segment">
+		<h2 class="ui center aligned icon header">
+			<i class="universal access icon"></i>
+			New Blog
+		</h2>
+		<form class ="ui form" action = "/blogs" method = "POST">
+			<div class ="field">
+				<label>Title</label>
+				<input type = "text" name = "blog[title]" placeholder = "Title">
+			</div>
+			<div class ="field">
+				<label>Image</label>
+				<input type = "text" name = "blog[image]" placeholder = "Image">
+			</div>
+			<div class ="field">
+				<label>Blog Post</label>
+				<textarea name = "blog[body]" placeholder="Blog post.."></textarea>
+			</div>
+			
+			<button class="ui primary button">
+				Submit
+			</button>
+		</form>
+		
+			
+	</div>
+
+
+
+
+
+
+<% include ./partials/footer %>
