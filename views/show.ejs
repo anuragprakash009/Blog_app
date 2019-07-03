@@ -5,9 +5,9 @@
 			Blogs
 		</h2>
 		<h1 class="ui header"><%=blogs.title%></h1>
-		<img src = "<%=blogs.image%>">
-		<p><span><%=blogs.created%></span></p>
-		<p><%=blogs.body%></p>
+		<img class = "ui centered rounded image"src = "<%=blogs.image%>"><br>
+		<p><span><%=blogs.created.toDateString()%></span></p>
+		<p><%-blogs.body%></p>
 
 		
 			

@@ -1,12 +1,14 @@
 var express = require("express"),
 app = express(),
 bodyParser = require("body-parser"),
+methodOverride = require("method-override"),
 mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/blog_app",{useNewUrlParse:true});
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({exteded: true}));
+app.use(methodOverride("_method"));
 //Mongo
 var blogSchema = new mongoose.Schema({
 	title: String,
@@ -56,8 +58,28 @@ app.get("/blogs/:id",function(req,res){
 		}
 	});
 });
+app.get("/blogs/:id/edit",function(req,res){
+	Blog.findById(req.params.id,function(err,found){
+		if(err)
+		{
+			res.redirect("/blogs");
+		}else{
+			res.render("edit",{blogs:found});
+		}
+	});
+});
 
+app.put("/blogs/:id",function(req,res){
+	Blog.findByIdAndUpdate(req.params.id,req.body.blog,function(err,update){
+		if(err)
+		{
+			res.redirect("/blogs")
+		}else{
+			res.redirect("/blogs/" + req.params.id);
+		}
+	});
+});
 
 app.listen(3000,process.env.IP,function(){
 	console.log("SERVER IS RUNNING !");
-})
+});

@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+	<div id = "blog_header" class="ui center aligned raised very padded text container segment">
+		<h2 class="ui center aligned icon header">
+			<i class="universal access icon"></i>
+			Edit <%= blogs.title %>
+		</h2>
+		<form class ="ui form" method="POST" action = "/blogs/<%= blogs._id %>?_method=PUT" >
+			<div class ="field">
+				<label>Title</label>
+				<input type = "text" name = "blog[title]" value="<%= blogs.title %>">
+			</div>
+			<div class ="field">
+				<label>Image</label>
+				<input type = "text" name = "blog[image]" value = "<%= blogs.image %>">
+			</div>
+			<div class ="field">
+				<label>Blog Post</label>
+				<textarea name = "blog[body]" placeholder="Blog post.."><%= blogs.body %></textarea>
+			</div>
+			
+			<button class="ui primary button">
+				Update
+			</button>
+		</form>
+		
+			
+	</div>
+
+
+
+<!-- method overing as html does not support PUT requests-->
+
+
+<% include ./partials/footer %>
