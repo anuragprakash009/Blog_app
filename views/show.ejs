@@ -8,7 +8,12 @@
 		<img class = "ui centered rounded image"src = "<%=blogs.image%>"><br>
 		<p><span><%=blogs.created.toDateString()%></span></p>
 		<p><%-blogs.body%></p>
-
+		<form action="/blogs/<%= blogs._id %>/edit">
+			<button class="ui blue button">Edit</button>
+		</form>
+		<form method="POST" action="/blogs/<%=blogs._id %>?_method=DELETE">
+			<button class="negative ui button">Delete</button>
+		<form>	
 		
 			
 	</div>
