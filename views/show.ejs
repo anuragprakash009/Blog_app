@@ -5,7 +5,7 @@
 			Blogs
 		</h2>
 		<h1 class="ui header"><%=blogs.title%></h1>
-		<img class = "ui centered rounded image"src = "<%=blogs.image%>"><br>
+		<img class = "ui Big centered rounded image"src = "<%=blogs.image%>"><br>
 		<p><span><%=blogs.created.toDateString()%></span></p>
 		<p><%-blogs.body%></p>
 		<form action="/blogs/<%= blogs._id %>/edit">

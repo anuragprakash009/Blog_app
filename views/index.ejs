@@ -1,14 +1,35 @@
 <% include ./partials/header %>
-<h1>Index Page</h1>
+<div id = "blog_header" class="ui center aligned raised very padded text container segment">
+	<h2 class="ui center aligned icon header"><i class="universal access icon"></i>Blogs</h2>
+		
 
+<div class = "ui items">
 <% blogs.forEach(function(blog){ %>
-	<div>
-		<h2><%=blog.title%></h2>
-		<img src = "<%= blog.image %>" >
-		<span><%= blog.created %></span>
-		<p><%= blog.body.substring(0,100)%></p>
-		<a href = "/blogs/<%=blog._id%>">Read More</a>
-	</div>
+	<div class = "ui items">
+		<div class = "ui rounded image left floated Small"><img src = "<%= blog.image %>" ></div>
+			<div class="content">
+				<a class ="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+				<div class ="meta">
+					<span><%= blog.created.toDateString() %></span>
+				</div>
+				<div class ="description">
+					<p><%= blog.body.substring(0,130)%>...</p>
+				</div>
+				<div class="extra">
+					<button class="ui tiny right labeled icon button basic red">
+						<i class="right arrow icon"></i>
+							<a href = "/blogs/<%=blog._id%>">Read More</a>
+					</button>
+					
+				</div>	
+			</div>	
+		</div>
+		
+	</div>	
+		
+	
+	
 <% }) %>
-
+</div>
+</div>
 <% include ./partials/footer %>
