@@ -7,7 +7,10 @@
 		<h1 class="ui header"><%=blogs.title%></h1>
 		<img class = "ui Big centered rounded image"src = "<%=blogs.image%>"><br>
 		<p><span><%=blogs.created.toDateString()%></span></p>
-		<p><%-blogs.body%></p>
+		<div class ="d">
+			<p><%-blogs.body%></p>
+		</div>	
+		<br>
 		<form action="/blogs/<%= blogs._id %>/edit">
 			<button class="ui blue button">Edit</button>
 		</form>

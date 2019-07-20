@@ -4,3 +4,16 @@ i.icon{
 #blog_header{
 	margin-top: 80px;
 }
+div.a {
+  text-align: center;
+}
+div.b {
+  text-align: left;
+}
+div.d {
+  text-align: justify;
+} 
+#image_index{
+	height:100px;
+	width:130px;
+}

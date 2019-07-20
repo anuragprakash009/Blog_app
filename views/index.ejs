@@ -5,16 +5,19 @@
 
 <div class = "ui items">
 <% blogs.forEach(function(blog){ %>
-	<div class = "ui items">
-		<div class = "ui rounded image left floated Small"><img src = "<%= blog.image %>" ></div>
-			<div class="content">
+		<div class="ui section divider"></div>
+		<div id ="image_index" class = "ui rounded image left floated"><img src = "<%= blog.image %>" ></div>
+			
 				<a class ="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+				
 				<div class ="meta">
 					<span><%= blog.created.toDateString() %></span>
 				</div>
-				<div class ="description">
+				
+				<div class ="d description">
 					<p><%= blog.body.substring(0,130)%>...</p>
 				</div>
+				
 				<div class="extra">
 					<button class="ui tiny right labeled icon button basic red">
 						<i class="right arrow icon"></i>
@@ -22,14 +25,14 @@
 					</button>
 					
 				</div>	
-			</div>	
-		</div>
+				
 		
-	</div>	
+		
+		
 		
 	
 	
-<% }) %>
+<% }); %>
 </div>
 </div>
 <% include ./partials/footer %>
