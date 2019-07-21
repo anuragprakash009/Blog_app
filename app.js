@@ -4,9 +4,10 @@ bodyParser = require("body-parser"),
 methodOverride = require("method-override"),
 mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/blog_app",{useNewUrlParse:true});
+//mongoose.connect("mongodb://localhost:27017/blog_app",{useNewUrlParse:true});
+mongoose.connect("mongodb+srv://anurag:prakash@cluster0-xem09.mongodb.net/test?retryWrites=true&w=majority");
 app.set("view engine","ejs");
-app.use(express.static("public"));
+app.use(express.static("public"));//middle-ware for img, style-sheets
 app.use(bodyParser.urlencoded({exteded: true}));
 app.use(methodOverride("_method"));
 //Mongo
