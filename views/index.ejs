@@ -3,28 +3,43 @@
 	<h2 class="ui center aligned icon header"><i class="universal access icon"></i>Blogs</h2>
 		
 
-<div class = "ui items">
+<div class="ui divided items">
 <% blogs.forEach(function(blog){ %>
-		<div class="ui section divider"></div>
-		<div id ="image_index" class = "ui rounded image left floated"><img src = "<%= blog.image %>" ></div>
+		
+		<div class="item">
+		<div class="image">
+			<img src = "<%= blog.image %>" >
+		</div>
+		<div class="content">
+			<a class="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+			<div class="meta">
+				<span class="cinema"><%= blog.created.toDateString() %></span>
+			</div>
+			<div class="d description">
+				<p><%= blog.body.substring(0,130)%>...</p>
+			</div>
+			<a href = "/blogs/<%=blog._id%>">
+			<div class="extra">
+				<div class="ui right floated primary button">
+					Read More
+				<i class="right chevron icon"></i>
+				</div>
+			</div>
+			</a>
+		</div>
+	</div>
+
 			
-				<a class ="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+			
+			
+			
+			
+			
 				
-				<div class ="meta">
-					<span><%= blog.created.toDateString() %></span>
-				</div>
 				
-				<div class ="d description">
-					<p><%= blog.body.substring(0,130)%>...</p>
-				</div>
 				
-				<div class="extra">
-					<button class="ui tiny right labeled icon button basic red">
-						<i class="right arrow icon"></i>
-							<a href = "/blogs/<%=blog._id%>">Read More</a>
-					</button>
-					
-				</div>	
+				
+				
 				
 		
 		

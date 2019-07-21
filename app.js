@@ -36,6 +36,11 @@ app.get("/blogs",function(req,res){
 	})
 	
 });
+
+app.get("/blogs/me",function(req,res){
+	res.render("me");
+		
+	});
 app.get("/blogs/new",function(req,res){
 	res.render("new");
 });
